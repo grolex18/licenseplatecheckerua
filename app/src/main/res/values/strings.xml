@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Перевірка реєстрації авто</string>
+
+    <string name="prompt_email">Номер авто</string>
+    <string name="prompt_password"></string>
+    <string name="action_sign_in">Перевірити номер</string>
+    <string name="action_sign_in_short">Перевірити номер</string>
+    <string name="invalid_username">Невірний номер</string>
+    <string name="fetch_failed">Номер не знайдено</string>
+    <string name="number">Номер</string>
+    <string name="model">Виробник</string>
+    <string name="year">Рік</string>
+    <string name="date">Дата реєстрації</string>
+    <string name="registration">Тип реєстрації</string>
+    <string name="capacity">Об\'єм двигуна</string>
+    <string name="color">Колір</string>
+    <string name="body">Тип автомобіля</string>
+    <string name="kind">Тип кузова</string>
+    <string name="ownWeight">Маса</string>
+    <string name="regAddrKoatuu">Код АТУ</string>
+    <string name="dep">Код ТСЦ</string>
+</resources>

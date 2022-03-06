@@ -21,6 +21,7 @@ import com.grolex.licenseplatescheckerua.data.model.CarInfo;
 public class CarInfoActivity extends AppCompatActivity {
 
     private CarInfoViewModel carInfoViewModel;
+    private TextView status;
     private TextView number;
     private TextView model;
     private TextView year;
@@ -42,6 +43,7 @@ public class CarInfoActivity extends AppCompatActivity {
                 .get(CarInfoViewModel.class);
 
         final EditText plateNumberEditText = findViewById(R.id.platenumber);
+        status = findViewById(R.id.status);
         number = findViewById(R.id.number);
         model = findViewById(R.id.model);
         year = findViewById(R.id.year);
@@ -79,15 +81,11 @@ public class CarInfoActivity extends AppCompatActivity {
                 }
                 loadingProgressBar.setVisibility(View.GONE);
                 if (carInfoResult.getError() != null) {
-                    showLoginFailed(carInfoResult.getError());
+                    updateUiWithUser(new CarInfoView(null));
                 }
                 if (carInfoResult.getSuccess() != null) {
                     updateUiWithUser(carInfoResult.getSuccess());
                 }
-//                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-//                finish();
             }
         });
 
@@ -122,6 +120,7 @@ public class CarInfoActivity extends AppCompatActivity {
 
     private void updateUiWithUser(CarInfoView model) {
         if (model.getCarInfo() != null) {
+            status.setText(R.string.status_found);
             CarInfo carInfo = model.getCarInfo();
             number.setText(carInfo.getNumber());
             this.model.setText(carInfo.getModel());
@@ -135,6 +134,20 @@ public class CarInfoActivity extends AppCompatActivity {
             regAddrKoatuu.setText(carInfo.getRegAddrKoatuu());
             ownWeight.setText(carInfo.getOwnWeight());
             dep.setText(carInfo.getDep());
+        } else {
+            status.setText(R.string.status_not_found);
+            number.setText("");
+            this.model.setText("");
+            year.setText("");
+            date.setText("");
+            registration.setText("");
+            capacity.setText("");
+            color.setText("");
+            body.setText("");
+            kind.setText("");
+            regAddrKoatuu.setText("");
+            ownWeight.setText("");
+            dep.setText("");
         }
     }
 

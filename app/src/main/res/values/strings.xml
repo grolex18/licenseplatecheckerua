@@ -19,4 +19,6 @@
     <string name="ownWeight">Маса</string>
     <string name="regAddrKoatuu">Код АТУ</string>
     <string name="dep">Код ТСЦ</string>
+    <string name="status_found">Знайдено</string>
+    <string name="status_not_found">Не знайдено</string>
 </resources>
